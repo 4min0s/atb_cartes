@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row ">
+    <!-- type 1: show everything -->
+    <ng-container *ngIf="type === 1">
+      <div class="col-1">
+        <img src="assets/person.png" class="person">
+      </div>
+      <div class="col-4">
+        <br>
+        <h5 class="title" style="transform: translateX(-10%) translateY(55%);">ATB  {{nom}}</h5>
+      </div>
+      <div class="col-3">
+        <img src="assets/atb.png" alt="ATB Logo" class="logo">
+      </div>
+      <div class="col-1">
+        <div style="position: relative; display: inline-block; width: 10px;">
+          <select [value]="selectedType" (change)="onTypeChange($event)" class="topbar-select">
+            <option selected disabled>type recherche</option>
+            <option value="nom">recherche par nom</option>
+            <option value="carte">recherche par num carte</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-2">
+        <br>
+        <div style="position: relative; display: inline-block; width: 213px;">
+          <input type="text" class="recherce" style="width: 100%; padding-right: 40px;" (input)="onSearchChange($event)">
+          <img src="assets/recherche.png" alt="Search Icon" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 24px; height: 24px; pointer-events: none;">
+        </div>
+      </div>
+      <div class="col-1" style="position: relative; display: inline-block; width: 213px;">
+        <img [src]="image" alt="Notification Icon" class="notification-icon" [ngClass]="{'wiggle': bellWiggle}" style="transform: translateY(50%); cursor: pointer;" (click)="onBellClick()">
+      </div>
+    </ng-container>
+
+    <!-- type 2: show only user icon, agence name, and logo -->
+    <ng-container *ngIf="type === 2">
+      <div class="col-1">
+        <img src="assets/person.png" class="person">
+      </div>
+      <div class="col-4">
+        <br>
+        <h5 class="title" style="transform: translateX(-10%) translateY(55%);">ATB  {{nom}}</h5>
+      </div>
+      <div class="col-3">
+        <img src="assets/atb.png" alt="ATB Logo" class="logo">
+      </div>
+    </ng-container>
+
+    <!-- type 3: show only the middle logo -->
+    <ng-container *ngIf="type === 3">
+      <div class="col-12 d-flex justify-content-center">
+        <img src="assets/atb.png" alt="ATB Logo" class="logo">
+      </div>
+    </ng-container>
+  </div>
+</div>

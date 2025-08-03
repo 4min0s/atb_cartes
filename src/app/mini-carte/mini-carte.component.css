@@ -1,0 +1,32 @@
+
+.container-fluid {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.container-fluid:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.container-fluid {
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.6); /* bottom black shadow */
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.62) 52%, #78CE5E 100%);
+    width: 97%;
+    margin: 20px;
+    pointer-events: all;
+
+}
+
+.container-fluid:hover {
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.8); /* darker shadow on hover */
+    cursor: pointer;
+}
+
+
+.icon{
+    width: 99px;
+    height: 99px;
+}

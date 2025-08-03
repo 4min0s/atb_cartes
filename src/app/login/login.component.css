@@ -1,0 +1,25 @@
+.title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #3F2F2F;
+}
+.title-mini{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: #716d6d;
+}
+.input{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    padding-left: 25px;
+    font-family: 'Nunito', sans-serif;
+     font-weight: 600;
+    font-size: 23px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    margin-bottom: 20px;
+}

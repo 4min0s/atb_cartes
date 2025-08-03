@@ -1,0 +1,67 @@
+.custom-notification {
+    position: absolute;
+    top: 90px;
+    right: 70px;
+    background: #D5D1D1;
+    border: 1.5px solid #bdbdbd;
+    border-radius: 0 10px 10px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 18px 28px 18px 18px;
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 2000;
+    min-width: 320px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.custom-notification .notif-count {
+    color: #d9534f;
+    font-weight: bold;
+    font-size: 20px;
+}
+.custom-notification .close-btn {
+    margin-left: auto;
+    font-size: 22px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    padding-left: 16px;
+    transition: color 0.2s;
+    position: relative;
+    top:-20px;
+    right: -20px;
+    
+}
+.custom-notification .close-btn:hover {
+    color: #941F1F;
+   
+   
+}
+.notification-arrow {
+    position: absolute;
+    top: -18px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 18px solid #D5D1D1;
+    filter: drop-shadow(0 -1.5px 0 #bdbdbd);
+}
+.title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #3F2F2F;
+}
+
+.container-fluid {
+    margin-bottom: 40px;
+    width: 80%;
+    height: 67%;
+    
+}

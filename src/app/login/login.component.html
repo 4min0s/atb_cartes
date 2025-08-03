@@ -1,0 +1,91 @@
+
+<div class="container-fluid">
+
+<div class="row">
+    <div class="col">
+        <app-top-bar [type]="3"></app-top-bar>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-3">
+       
+
+        <div class="row">
+            <div class="col">
+            <img src="assets/atb.png" alt="ATB Logo" class="logo" style="width: 500px; height: 139px; margin-left: 20px;">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="offset-4 col-8">
+                <h1 class="title">Bienvenue sur ATBNET, le service de gestions des cartes bancaires </h1>
+            </div>
+        </div>
+
+    </div>
+    <div class="offset-3 col offset-1" style="border: 1px solid black; margin-right: 100px; width: 657px; height: 489px; border-radius: 20px;">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h2 class="title text-center"> S'identifier</h2>
+            </div>
+        </div>
+        <BR>
+     
+        <div class="row">
+            <div class="col text-center">
+                <input type="text" class="input" placeholder=" identifiant" [(ngModel)]="username">
+                <div *ngIf="error" class="text-danger">{{ error }}</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col text-center">
+                <input type="text" class="input" placeholder=" code securité" [(ngModel)]="password">
+                <div *ngIf="error" class="text-danger">{{ error }}</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col text-center">
+                <button (click)="login()" class="btn btn-primary">Se connecter</button>
+                
+
+            </div>
+        </div>
+        
+
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col text-center">
+        <h5 class="title-mini"> NB: Cette version est uniquement destinée à la démonstration. Elle est en cours de développement. Veuillez noter que tout est susceptible de changer.</h5>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col">
+        <h5 class="title-mini"> © ATB 2025 tunis </h5>
+</div>
+
+</div>

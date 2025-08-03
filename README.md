@@ -1,27 +1,32 @@
-# Atb
+# Importer la base de données dans MySQL Workbench
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.15.
+1) Ouvrez MySQL Workbench  
+2) Créez un nouveau schéma  
+3) Exécutez le script SQL `database/base.sql` pour créer les tables et les données :  
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Configuration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Configurez le port et les paramètres de connexion à la base de données dans `main.py` :
 
-## Build
+conn = mysql.connector.connect(
+    host="localhost",
+    port=3310,
+    user="root",
+    password="amine",
+    database="stage",
+    autocommit=True,
+    ssl_disabled=True
+)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Remplacez ces valeurs par votre propre configuration si nécessaire.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Comment démarrer
 
-## Running end-to-end tests
+- Démarrer le serveur Angular :  
+  ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Démarrer le backend FastAPI :  
+  python -m uvicorn main:app --reload

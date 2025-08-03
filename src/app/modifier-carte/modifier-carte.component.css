@@ -1,0 +1,46 @@
+.title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.container-fluid {
+    background-color: #F4F4F4;
+    width : 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   
+}
+.second-container {
+    padding: 30px;
+    margin: 150px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+  
+}
+
+.title-big {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color: #3a2d2d;
+}
+
+/* Style select to match app-input fields */
+.custom-select-input {
+    background-color:hsl(0, 0%, 92%);
+    border-radius: 10px;
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.2);
+    width: 276px;
+    height: 39px;
+    padding: 10px;
+    margin-top: 15px;
+    border:1px solid #1d1c1c;
+    padding-top: 3px;
+}

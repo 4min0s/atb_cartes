@@ -1,0 +1,118 @@
+<div class="container-fluid">
+    <div class="row" style="border: 1px solid black;">
+        <div class="col top" *ngIf="notificationCount === 0">
+            <app-top-bar  [notificationCount]="notificationCount" (searchChange)="onSearch($event)" (searchTypeChange)="onSearchTypeChange($event)" (bellClick)="onBellClick()"></app-top-bar>
+        </div>
+        <div class="col top"  *ngIf="notificationCount > 0">
+            <app-top-bar  [notificationCount]="notificationCount" [image]="'assets/rednotif.png'" (searchChange)="onSearch($event)" (searchTypeChange)="onSearchTypeChange($event)" (bellClick)="onBellClick()" ></app-top-bar>
+        </div>
+    </div>
+    <div *ngIf="showNotification" class="custom-notification">
+        <div class="notification-arrow"></div>
+        <span>
+            attention vous avez <span class="notif-count">{{notificationCount}}</span> cartes qui vont depasser la limite prochainement
+        </span>
+        <span class="close-btn" (click)="closeNotification()">&times;</span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="row" style="margin-top: 20PX;">
+        <div class="col text-center">
+            <h1 class="title">cartes valables</h1>
+        </div>
+    </div>
+    <div class="row" *ngFor="let carte of card; let i = index">
+        <div class="col" *ngIf="carte.existe === 'valable'" style="position:relative;">
+            <app-mini-carte
+                [nom]="carte.nom"
+                [prenom]="carte.prenom"
+                [cin]="carte.cin"
+                [type]="carte.type"
+                [numCarte]="carte.numCarte"
+                [dateValidite]="carte.dateValidite"
+                [existe]="carte.existe"
+                [emplacement]="carte.emplacement"
+                [valable]="carte.existe"
+                [jour]="carte.jour"
+                [date_ajout]="carte.date_ajout"
+                [numcompte]="carte.numero_compte"
+                [date_naissance]="carte.date_naissance"
+                [contact]="carte.contact"
+                [fadeInDuration]="2000 + i * 700"
+                (carteSelected)="onCarteClick($event)">
+            </app-mini-carte>
+            
+            <div *ngIf="carte.jour > 20" class="warning-expiry" style="color: #d9534f; font-weight: bold; margin-top: 8px; margin-left: 25px;  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);">
+                carte expirera prochainement contacter le client
+            </div>
+        </div>
+    </div>
+    <!-- Non valables -->
+    
+    
+  <br>
+  <br>
+     
+    <div class="row">
+        <div class=" col-5">
+            <app-button direction="caisier" text="voir casier"></app-button>
+        </div>   
+        <div class="offset-5 col">
+            <app-button direction="ajouter" ></app-button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+     <div class="row" style="margin-top: 20PX;">
+        <div class="col text-center">
+            <h1 class="title">cartes non valables</h1>
+        </div>
+    </div>
+
+  <div class="row" *ngFor="let carte of card; let i = index">
+        <div class="col" *ngIf="carte.existe === 'nonvalable'" style="position:relative;">
+            <app-mini-carte
+                [nom]="carte.nom"
+                [prenom]="carte.prenom"
+                [cin]="carte.cin"
+                [type]="carte.type"
+                [numCarte]="carte.numCarte"
+                [dateValidite]="carte.dateValidite"
+                [existe]="carte.existe"
+                [emplacement]="carte.emplacement"
+                [valable]="carte.existe"
+                [jour]="carte.jour"
+                [date_ajout]="carte.date_ajout"
+                [numcompte]="carte.numero_compte"
+                [date_naissance]="carte.date_naissance"
+                [contact]="carte.contact"
+                [fadeInDuration]="2000 + i * 700"
+                (carteSelected)="onCarteClick($event)">
+            </app-mini-carte>
+
+        </div>
+    </div>
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+     
+</div>

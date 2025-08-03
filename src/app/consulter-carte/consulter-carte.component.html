@@ -1,0 +1,158 @@
+<app-top-bar [type]="2" ></app-top-bar>
+
+<div class="container-fluid">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="row second-container" >
+                <div class="col">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h4 class="title-big">infomations personelles</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="assets/big logo.png" class="icon" style="width: 190px; height: 190px;">
+                        </div>
+                        <div class=" offset-1 col-3">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">nom :  <span class="mini_title">{{ card?.nom }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">prénom : <span class="mini_title">{{ card?.prenom }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">cin : <span class="mini_title">{{ card?.cin }}</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div style="border-right: 2px solid #888; height: 150px; margin: 16px 0;"> </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class=" col-3">
+                             <div class="row">
+                                <div class="col">
+                                    <h4 class="title">contact : <span class="mini_title">{{ card?.contact }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">numéro de compte : <span class="mini_title">{{ card?.numero_compte }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">date naissance : <span class="mini_title">{{ card?.date_naissance }}</span></h4>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="border-top: 2px solid #888; width: 100%; margin: 16px 0;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col text-center">
+                            <h4 class="title-big">infomations de la carte </h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+<div class="row">
+    <div class="col-lg-1">
+        <img *ngIf="card?.type == 'courant'" src="assets/bigred.png" class="icon" style="width: 233px; height: 233px; transform: translateY(20%);">
+        <img *ngIf="card?.type == 'epargne'" src="assets/bigyellow.png" class="icon" style="width: 233px; height: 233px; transform: translateY(20%);">
+    </div>
+                        <div class=" offset-1 offset-md-2 col-3">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">type : <span class="mini_title">{{ card?.type }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">num carte : <span class="mini_title">{{ formattedNumCarte }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">date de validité : <span class="mini_title">{{ card?.dateValidite }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">date ajout : <span class="mini_title">{{ card?.date_ajout }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">durée de détention : <span class="mini_title">{{ card?.jour }}</span></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">emplacement : <span class="mini_title">{{ card?.emplacement }}</span></h4>
+                                    <span class="glow-eye" style="position:absolute; top:10px; right:10px; cursor:pointer;" (click)="viewEmplacement(card.emplacement)">
+                                      
+                <img src="assets/visible.png" alt="Voir Emplacement" style="width:32px; height:32px; filter: grayscale(0);">
+            </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="title">etat : <span class="mini_title">{{ card?.existe }}</span></h4>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=" offset-8 col">
+                    <app-button text="suprimer" (click)="onSupprimerClick()"></app-button>
+                </div>
+                <div class="col">
+                    <app-button text="modifier"  (click)="onModifierClick(card)"></app-button>
+                </div>
+    </div>
+    <br><br><br><br>
+</div>
+
+<!-- Delete confirmation dialog -->
+<div *ngIf="showDeleteDialog" class="message-backdrop">
+  <div class="message-container">
+    <div class="message-text">Voulez-vous supprimer ?</div>
+    <div style="display: flex; gap: 16px; justify-content: center;">
+      <app-button text=" carte" (click)="deleteCarteOnly()"></app-button>
+      <app-button text=" carte et client" (click)="deleteCarteAndClient()" ></app-button>
+    </div>
+    <br>
+    <app-button text="Annuler" (click)="cancelDelete()"></app-button>
+  </div>
+</div>

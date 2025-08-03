@@ -1,0 +1,95 @@
+
+/* Delete dialog styles (copied from message.component.css) */
+.message-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.message-container {
+    background-color: #F4F4F4;
+    width: 420px;
+    min-height: 220px;
+    padding: 32px 24px 24px 24px;
+    border: 3px solid #7c7a72;
+    border-radius: 12px;
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-text {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 32px;
+    color: #941F1F;
+    font-weight: 600;
+}
+.title{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.mini_title{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: #898881;
+  
+}
+.container-fluid {
+    background-color: #F4F4F4;
+    width : 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   
+}
+.second-container {
+    padding: 30px;
+    margin: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+  
+}
+
+.title-big {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color: #3a2d2d;
+}
+
+.glow-eye {
+  display: inline-block;
+  position: relative;
+}
+.glow-eye img {
+  filter: drop-shadow(0 0 0px #4be04b) drop-shadow(0 0 8px #4be04b) drop-shadow(0 0 16px #fff);
+  animation: glow-eye-anim 1s infinite alternate;
+}
+@keyframes glow-eye-anim {
+  0% {
+    filter: drop-shadow(0 0 0px #4be04b) drop-shadow(0 0 8px #4be04b) drop-shadow(0 0 16px #fff);
+  }
+  100% {
+    filter: drop-shadow(0 0 12px #4be04b) drop-shadow(0 0 24px #4be04b) drop-shadow(0 0 32px #fff);
+  }
+}

@@ -1,0 +1,193 @@
+<app-top-bar [type]="2"></app-top-bar>
+
+<div class="container-fluid">
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="row">
+        <div class="col">
+            <h4 class="title-big text-center"> ajouter une carte </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row second-container"  >
+                <div class="col">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h4 class="title-big">infomations personelles</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="assets/big logo.png" class="icon" style="width: 190px; height: 190px;">
+                        </div>
+                        <div class=" offset-1 col-3">
+                            <div class="row">
+                                <div class="col-5">
+                                    <h4 class="title">cin :  </h4>
+                                </div>
+                                <div class="col-6" style="position: relative;">
+                                    <app-input type_input="text" [(value)]="card.new_cin" (valueChange)="onCinInputChange()" (focus)="onCinInputChange()"></app-input>
+                                    <div *ngIf="showCinSuggestions" class="cin-suggestion-list">
+                                    <ul style="list-style: none; padding: 0; margin: 0; background: #fff; border: 1px solid #ccc; max-height: 180px; overflow-y: auto; position: absolute; z-index: 100; width: 100%;">
+                                        <li *ngFor="let suggestion of cinSuggestions" (mousedown)="selectCinSuggestion(suggestion)" style="padding: 8px; cursor: pointer; border-bottom: 1px solid #eee;">
+                                        <span><b>{{ suggestion.cin }}</b> - {{ suggestion.nom }} {{ suggestion.prenom }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
+<div class="col-5">
+    <h4 class="title">prénom :  </h4>
+</div>
+<div class="col-7">
+    <app-input type_input="text" [(value)]="card.prenom"></app-input>
+</div>
+                            </div>
+                            <div class="row">
+<div class="col-5">
+    <h4 class="title">nom :   </h4>
+</div>
+<div class="col-7">
+    <app-input type_input="text" [(value)]="card.nom"></app-input>
+</div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div style="border-right: 2px solid #888; height: 150px; margin: 16px 0; transform: translateX(45%);"> </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class=" col-5">
+                            <div class="row">
+                                <div class="col-5">
+                                    <h4 class="title">contact : </h4>
+                                </div>
+                                <div class="col-4">
+                                    <app-input type_input="text" [(value)]="card.contact"></app-input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <h4 class="title">numéro de compte : </h4>
+                                </div>
+                                <div class="col-4">
+                                    <app-input type_input="text" [(value)]="card.numero_compte"></app-input>
+                                </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <h4 class="title">date naissance  :</h4>
+                                </div>
+                                <div class="col-4">
+                                    <app-input type_input="date" [(value)]="card.date_naissance"></app-input>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="border-top: 2px solid #888; width: 100%; margin: 16px 0;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col text-center">
+                            <h4 class="title-big">infomations de la carte </h4>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+<div class="row">
+    <div class="col-lg-1">
+        <img *ngIf="card?.type == 'epargne'" src="assets/bigyellow.png" class="icon" style="width: 233px; height: 233px; transform: translateY(20%);">
+        <img *ngIf="card?.type == 'courant'" src="assets/bigred.png" class="icon" style="width: 233px; height: 233px; transform: translateY(20%);">
+    </div>
+                        <div class=" offset-1 offset-md-2 col-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="title">type :</h4>
+                                </div>
+                                <div class="col-6">
+<select [(ngModel)]="card.type" class="custom-select-input">
+                                        <option value="epargne" selected>epargne</option>
+                                        <option value="courant">courant</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="title">num carte : </h4>
+                                </div>
+                                 <div class="col-6">
+                                    <app-input type_input="num-carte" [(value)]="card.numCarte"></app-input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="title">date de validité :  </h4>
+                                </div>
+                                 <div class="col-6">
+<app-input type_input="date" [(value)]="card.dateValidite"></app-input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="title">date d'arrivage :  </h4>
+                                </div>
+                                 <div class="col-6">
+<app-input type_input="date" [(value)]="card.date_ajout"></app-input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="title">emplacement : </h4>
+                                </div>
+                                <div class="col-6">
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="display: flex; align-items: center; position: relative;">
+                                            <app-input type_input="text" [(value)]="card.new_emplacement" (valueChange)="onEmplacementChange()" (click)="showSuggestion = true" (blur)="onEmplacementBlur()"></app-input>
+                                            <img *ngIf="emplacementValid && card.new_emplacement?.trim()" src="assets/reverifier.png" alt="valide" style="width: 50px; height: 50px; margin-left: 8px;" />
+                                            <div style="position: absolute; left: 110%; top: 0; z-index: 10;" *ngIf="showSuggestion">
+                                                <app-suggestion (suggestionSelected)="onSuggestionSelected($event)"></app-suggestion>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="emplacementWarning" style="color: red; font-weight: bold; margin-top: 5px;">
+                                        {{ emplacementWarning }}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=" offset-8 col">
+                    <app-message *ngIf="successMessage" [message]="successMessage" (ok)="onMessageOk()"></app-message>
+                </div>
+                <div class="col">
+                    <app-button text="confirmer" (click)="submit()" [disabled]="!emplacementValid"></app-button>
+                </div>
+    </div>
+    <br><br><br><br>
+</div>

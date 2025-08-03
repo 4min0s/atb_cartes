@@ -1,0 +1,79 @@
+
+<div class="container-fluid" [@fadeIn]="{ value: '', params: { fadeInDuration: fadeInDuration } }" [ngStyle]="{
+  'background': valable == 'valable' ? 'linear-gradient(to right, rgba(255, 255, 255, 0.62) 52%, #78CE5E 100%)' : 'linear-gradient(to right, #ECEEEC, #949C92)'
+}" (click)="onCarteClick()" style="cursor:pointer;">
+ 
+<div class="row" >   
+    <div class="col-lg-1 col-md-2">
+        <br>
+            <img src="assets/icon.png" class="icon">
+        </div>
+        <div class="col-2">
+            <br>
+            
+            <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">nom : {{ nom }}</h4>
+                </div>
+                
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">prenom : {{ prenom }}</h4>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-1 d-flex align-items-stretch justify-content-center">
+            <div style="border-right: 2px solid #888; height: 100%; min-height: 125px; width: 0;"></div>
+        </div>
+        <div class="col-3">
+             <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">type : {{ type }}</h4>
+                </div>
+                
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">num carte : {{ formattedNumCarte }}</h4>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">date de validité : {{ dateValidite }}</h4>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-1">
+            <br>
+            <img *ngIf="type == 'courant' " src="assets/creditred.png" alt="Carte Rouge" class="logo">
+            <img *ngIf="type == 'epargne'" src="assets/credityelllow.png" alt="Carte Jaune" class="logo">
+        </div>
+         <div class="col-1 d-flex align-items-stretch justify-content-center">
+            <div style="border-right: 2px solid #888; height: 100%; min-height: 125px; width: 0;"></div>
+        </div>
+        <div class="col-2">
+             <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">etat : {{ existe }}</h4>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">emplacement : {{ emplacement }}</h4>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h4 class="mini-title">durée de détention : {{ jour }}</h4>
+                </div>
+            </div>
+        </div>

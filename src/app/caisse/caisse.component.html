@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <app-top-bar [type]="2"></app-top-bar>
+        </div>
+    </div>
+    
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="table-container">
+  <table class="emplacement-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let col of columns">{{ col }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows; let rowIdx = index">
+        <td class="row-label">{{ row }}</td>
+        <td *ngFor="let col of columns; let colIdx = index"
+            [ngClass]="{'occupied': isOccupied(row, col), 'highlighted': isHighlighted(row, col)}">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+</div>
+
+</div>

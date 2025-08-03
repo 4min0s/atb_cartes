@@ -1,0 +1,16 @@
+<div class="bubble-container" *ngIf="show">
+    <div class="bubble fade-in">
+        <button (click)="closeSuggestion()" class="close-btn" aria-label="Fermer">×</button>
+        <h2 class="title" >Emplacement incertain ? Voici une suggestion pour vous aider :</h2>
+        <div *ngIf="currentSuggestion" style="margin-top: 18px;">
+            <span class="suggestion-text text-center" (click)="update()" style="cursor:pointer; color:#941F1F; font-weight:600; font-size:20px;">
+                {{ currentSuggestion.nom }}</span>
+                <br>
+            <span (click)="onSuggestionClick()" style="font-size:16px; color:#888 ; font-weight: 600; cursor: pointer;">(Cliquez ici pour une autre suggestion)</span>
+            
+        </div>
+        <div *ngIf="!currentSuggestion" style="margin-top: 18px; color: #888;">
+            Aucune suggestion disponible.
+        </div>
+    </div>
+</div>

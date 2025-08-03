@@ -1,0 +1,44 @@
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.emplacement-table {
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.emplacement-table th, .emplacement-table td {
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  border: 2px solid white;
+  background: #D9D9D9;
+  padding: 0;
+}
+.emplacement-table th {
+  background: #a8a7a7;
+  font-weight: 600;
+}
+
+
+.row-label {
+  background: #8f3737;
+  font-weight: 600;
+}
+.occupied {
+  background: #8b2323 !important;
+}
+/* Flickering green highlight for selected emplacement */
+.highlighted {
+  background: #4be04b !important;
+  animation: flicker-green 0.7s infinite alternate;
+}
+
+@keyframes flicker-green {
+  0% { box-shadow: 0 0 0px #4be04b; }
+  100% { box-shadow: 0 0 16px #4be04b; }
+}
